@@ -79,7 +79,6 @@ const ContactForm = () => {
     addContact(name, phoneNumber);
     setName("");
     setPhoneNumber("");
-    console.log(isOkay);
   };
 
   return (
