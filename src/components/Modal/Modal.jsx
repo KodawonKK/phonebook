@@ -9,6 +9,7 @@ const ModalWrap = styled.div`
   width: 100%;
   max-width: 60%;
   margin: 0 auto;
+  z-index: 999;
 `;
 const ModalTop = styled.div`
   background: #ff82b0;

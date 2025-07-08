@@ -2,4 +2,6 @@ body {
   font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
+  cursor: url("../src/icon/love.png") 4 4, auto;
+  height: 100vh;
 }

@@ -11,6 +11,7 @@ const ContactBookWrap = styled.div`
   box-shadow: -6px 7px 0 0 #000000;
   border-top-left-radius: 15px;
   border-top-right-radius: 10px;
+  position: relative;
 `;
 const ContactBook = styled.div`
   height: 300px;
@@ -32,6 +33,7 @@ const ContactBookBtm = styled.div`
 const ContactSearchWrap = styled.div`
   border: 1px solid #000;
   display: flex;
+
   /* column-gap: 5px; */
 `;
 const ContactSearch = styled.input`
@@ -43,8 +45,15 @@ const ContactSearchBtn = styled.button`
   border: none;
   background: none;
 `;
+const ContactIcon = styled.div`
+  width: 50px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+`;
 const Contacts = styled.div`
   display: flex;
+  padding-top: 10px;
 `;
 const InfoWrap = styled.div``;
 const Name = styled.h1`
@@ -60,11 +69,11 @@ const ContactList = () => {
   let [search, setSearch] = useState("");
 
   const contactSearch = (e) => {
-    if (e.key === "Enter") {
-      let keyword = e.target.value;
-      setSearchResult(phoneBook.filter((e) => e.name === keyword));
-      setSearch(keyword);
-    }
+    // if (e.key === "Enter") {
+    let keyword = e.target.value;
+    setSearchResult(phoneBook.filter((e) => e.name.includes(keyword)));
+    setSearch(keyword);
+    // }
   };
   return (
     <ContactListWrap>
@@ -104,6 +113,9 @@ const ContactList = () => {
               </div>
             )}
           </ContactBookBtm>
+          <ContactIcon>
+            <img src={require("../icon/phonebook.png")} alt="전화번호부 아이콘" width="100%" />
+          </ContactIcon>
         </ContactBook>
       </ContactBookWrap>
     </ContactListWrap>
